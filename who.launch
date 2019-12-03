@@ -1,0 +1,14 @@
+<launch>
+
+  <node name="soundplay_node" pkg="sound_play" type="soundplay_node.py" output="screen"/>
+
+  <node name="who" pkg="beginner_tutorials" type="who.py" output="screen">
+  	<param name="voice" value="voice_don_diphone"/>
+  	<param name="wavepath" value="$(find beginner_tutorials)/sounds"/>
+
+  </node>
+
+  <node name="pub_frame" pkg="beginner_tutorials" type="pub_frame.py" output="screen"/>
+  <node name="is_start" pkg="beginner_tutorials" type="dooropen.py" output="screen" />
+  <node name="indoor" pkg="beginner_tutorials" type="getindoor.py" output="screen" />
+</launch>
